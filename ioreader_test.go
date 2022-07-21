@@ -42,12 +42,12 @@ func TestReader(t *testing.T) {
 		Output []Document
 		Error  string
 	}{
-		// #0
+		// #test0
 		{
 			Input:  nil,
 			Output: nil,
 		},
-		// #1
+		// #test1
 		{
 			Input: []byte(`{"id":1}
 {"id":2}`),
@@ -56,13 +56,13 @@ func TestReader(t *testing.T) {
 				{ID: 2},
 			},
 		},
-		// #2
+		// #test2
 		{
 			Input:  []byte(`{"id":"abc"}`),
 			Output: nil,
 			Error:  "json: cannot unmarshal string into Go struct field",
 		},
-		// #3
+		// #test3
 		{
 			Input: []byte("{\"id\":1,\"text\":\"A room\\nwith\\na\\nnewline\\n\"}\n{\"id\":2,\"text\":\"No\\tsuch\\ntext\\r\\n\\r\\n\"}\n"),
 			Output: []Document{
@@ -74,7 +74,7 @@ newline
 				{ID: 2, Text: "No\tsuch\ntext\r\n\r\n"},
 			},
 		},
-		// #4
+		// #test4
 		{
 			Input: docs(128*1024),
 			Output: nil,
