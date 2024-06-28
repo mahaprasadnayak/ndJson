@@ -18,4 +18,4 @@ This means '\r\n' is also supported because trailing white space is ignored when
 
 2. Each Line is a Valid JSON Value
 The most common values will be objects or arrays, but any JSON value is permitted. See json.org for more information about JSON values.
-### please visit "ndjson.org"  for more information .
+### Please visit "ndjson.org"  for more information .
